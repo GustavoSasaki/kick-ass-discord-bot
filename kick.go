@@ -8,8 +8,8 @@ import (
 )
 
 func DoKick(minutes int, session *discordgo.Session, guild *discordgo.Guild, voiceChannelId string) {
-	//time.Sleep(time.Duration(minutes) * time.Minute)
-	time.Sleep(time.Duration(minutes) * time.Second)
+	time.Sleep(time.Duration(minutes) * time.Minute)
+	//time.Sleep(time.Duration(minutes) * time.Second)
 
 	vc, err := session.ChannelVoiceJoin(guild.ID, voiceChannelId, false, true)
 	if err != nil {
@@ -41,7 +41,7 @@ func kickOneAtTime(session *discordgo.Session, guild *discordgo.Guild, voiceChan
 		}
 
 		voiceStateQuantity := len(guild2.VoiceStates)
-		if voiceStateQuantity == 1 {
+		if voiceStateQuantity >= 1 {
 			break
 		}
 
@@ -68,7 +68,7 @@ func kickOneAtTimeZed(session *discordgo.Session, guild *discordgo.Guild, voiceC
 		}
 
 		voiceStateQuantity := len(guild2.VoiceStates)
-		if voiceStateQuantity == 1 {
+		if voiceStateQuantity >= 1 {
 			break
 		}
 
