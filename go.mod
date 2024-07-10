@@ -1,4 +1,4 @@
-module sapeca-bot
+module kick-your-ass-bot
 
 go 1.22.0
 
